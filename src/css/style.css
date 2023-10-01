@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body {
+    background-color: #000000;
+    overflow: hidden; /* overflow é o que está sobrando (de fora) da página. O hidden o esconde */
+}
+
+main::after { /* cria estilo para um pseudo-elemento, um elemento extra que não existe no html */
+    content: ""; /* Cria um espaço de conteúdo vazio só para aplicar outras coisas como degrade */ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+    display: none; /* faz aparecer ou desaparecer os elementos */
+    height: 100vh; /* vh (viewport height) é a altura da tela do dispositivo que o usuário acessa */
+}
+
+main .personagem.selecionado { /* se coloca dessa forma quando são duas classes em na mesma tag */
+    display: block;
+}
+
+main .personagem .imagem { /* aqui se coloca separado pois é uma classe dentro da outra */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* object-fit se usa para redimensionar uma imagem para se ajustar ao seu contâiner. O "Cover" faz com que a imagem ocupe o espaço inteiro onde foi aplicada */
+}
+
+.conteudo {
+    position: absolute; /* faz o elemento ficar por cima de qualquer coisa, o destaca */
+    top: 0; /* fez o elemento ficar na posição 0 do topo, o levando pra cima */ 
+    left: 120px;
+    display: flex;
+    flex-direction: column; /* define que se quer os elementos posicionados por coluna, não por linha */
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1; /* é o eixo "z" e significa profundidade. É uma hierarquia de conteúdos index. O 1 Significa que ele vem primeiro que os outros, fica por cima dos demais. */
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px;
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png");
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* criar um vão entre os elementos, um espaçamento */
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer; 
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+}

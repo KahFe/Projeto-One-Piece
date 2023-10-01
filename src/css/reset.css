@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* Esse documento css reseta as configurações padrão do navegador ao se entrar num site.
+    OBS: PODE-SE COLOCAR ISSO TUDO JUNTO NUM DOCUMENTO SÓ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
